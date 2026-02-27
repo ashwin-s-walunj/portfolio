@@ -147,38 +147,56 @@ const Home = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-[300px_1fr] gap-12 items-start mb-12">
+            {/* Profile Picture */}
+            <div className="mx-auto md:mx-0">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                <img
+                  src={portfolioData.personal.image}
+                  alt={portfolioData.personal.name}
+                  className="relative w-full aspect-square object-cover rounded-2xl border-2 border-cyan-500/30"
+                />
+              </div>
+            </div>
+
+            {/* Bio and Contact Info */}
             <div className="space-y-6">
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed text-lg">
                 {portfolioData.personal.bio}
               </p>
               
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-cyan-400" />
+                  <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                   <span>{portfolioData.personal.location}</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                  <span>{portfolioData.personal.email}</span>
+                  <Mail className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  <a href={`mailto:${portfolioData.personal.email}`} className="hover:text-cyan-400 transition-colors">
+                    {portfolioData.personal.email}
+                  </a>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-cyan-400" />
-                  <span>{portfolioData.personal.phone}</span>
+                  <Phone className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  <a href={`tel:${portfolioData.personal.phone}`} className="hover:text-cyan-400 transition-colors">
+                    {portfolioData.personal.phone}
+                  </a>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              {portfolioData.stats.map((stat, idx) => (
-                <Card key={idx} className="bg-[#151518] border-cyan-500/20 hover:border-cyan-500/40 transition-all hover-lift">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {portfolioData.stats.map((stat, idx) => (
+              <Card key={idx} className="bg-[#151518] border-cyan-500/20 hover:border-cyan-500/40 transition-all hover-lift">
+                <CardContent className="p-6 text-center">
+                  <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           {/* Education */}
