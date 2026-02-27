@@ -98,10 +98,10 @@ const Home = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
               className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-6 text-lg glow-effect"
             >
-              Get In Touch
+              Learn More
             </Button>
             <Button
               variant="outline"
