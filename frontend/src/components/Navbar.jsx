@@ -58,12 +58,6 @@ const Navbar = () => {
                 {item.label}
               </button>
             ))}
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="bg-cyan-500 hover:bg-cyan-600 text-white"
-            >
-              Get In Touch
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
