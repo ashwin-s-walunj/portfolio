@@ -37,19 +37,6 @@ const Home = () => {
     );
   };
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   const skillCategories = [
     { title: 'Frontend', icon: <Code2 className="w-5 h-5" />, skills: portfolioData.skills.frontend },
     { title: 'Backend', icon: <Code2 className="w-5 h-5" />, skills: portfolioData.skills.backend },
