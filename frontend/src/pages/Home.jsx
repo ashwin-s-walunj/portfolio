@@ -324,103 +324,106 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-[#0f0f11]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Get In <span className="gradient-text">Touch</span>
-          </h2>
-          
-          <Card className="bg-[#151518] border-cyan-500/20">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Name
-                  </label>
-                  <Input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-[#0a0a0b] border-cyan-500/30 text-white focus:border-cyan-400"
-                    placeholder="Your name"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Email
-                  </label>
-                  <Input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-[#0a0a0b] border-cyan-500/30 text-white focus:border-cyan-400"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="bg-[#0a0a0b] border-cyan-500/30 text-white focus:border-cyan-400"
-                    placeholder="Your message..."
-                  />
-                </div>
-                
-                <Button
-                  type="submit"
-                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-6 text-lg"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-cyan-500/10">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-6 mb-4">
-            <a
-              href={portfolioData.personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href={portfolioData.personal.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 transition-colors"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a
-              href={`mailto:${portfolioData.personal.email}`}
-              className="text-gray-400 hover:text-cyan-400 transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
+      <footer className="py-12 px-4 bg-[#0f0f11] border-t border-cyan-500/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* About */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-3">Ashwin Walunj</h3>
+              <p className="text-gray-400 text-sm">
+                Software Engineer specializing in full-stack development and scalable cloud solutions.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-3">Quick Links</h3>
+              <div className="space-y-2">
+                <button
+                  onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })}
+                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                >
+                  Experience
+                </button>
+                <button
+                  onClick={() => document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })}
+                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                >
+                  Skills
+                </button>
+                <button
+                  onClick={() => document.getElementById('recommendations').scrollIntoView({ behavior: 'smooth' })}
+                  className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                >
+                  Testimonials
+                </button>
+              </div>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-3">Contact</h3>
+              <div className="space-y-2 text-sm">
+                <a
+                  href={`mailto:${portfolioData.personal.email}`}
+                  className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  {portfolioData.personal.email}
+                </a>
+                <a
+                  href={`tel:${portfolioData.personal.phone}`}
+                  className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  {portfolioData.personal.phone}
+                </a>
+                <div className="flex items-center gap-2 text-gray-400">
+                  <MapPin className="w-4 h-4" />
+                  {portfolioData.personal.location}
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} {portfolioData.personal.name}. Built with React & Tailwind CSS.
-          </p>
+
+          <div className="border-t border-cyan-500/10 pt-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-gray-500 text-sm">
+                © {new Date().getFullYear()} {portfolioData.personal.name}. Built with React & Tailwind CSS.
+              </p>
+              <div className="flex items-center gap-4">
+                <a
+                  href={portfolioData.personal.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href={portfolioData.personal.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href={`mailto:${portfolioData.personal.email}`}
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
