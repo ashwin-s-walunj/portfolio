@@ -23,13 +23,7 @@ import {
 } from 'lucide-react';
 
 const Home = () => {
-  const { toast } = useToast();
   const [currentRecommendation, setCurrentRecommendation] = useState(0);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
   const nextRecommendation = () => {
     setCurrentRecommendation((prev) =>
