@@ -9,7 +9,7 @@ export const portfolioData = {
     location: "Berlin, Germany",
     linkedin: "https://linkedin.com/in/ashwin-walunj",
     github: "https://github.com/ashwinwalunj",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+    image: "https://customer-assets.emergentagent.com/job_ashwin-showcase/artifacts/svq56oto_Generated%20Image%20September%2018%2C%202025%20-%2010_46AM.png"
   },
   
   experience: [
