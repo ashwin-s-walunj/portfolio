@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { portfolioData } from '../data/mock';
 import Navbar from '../components/Navbar';
 import ExperienceCard from '../components/ExperienceCard';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { useToast } from '../hooks/use-toast';
 import {
   Github,
   Linkedin,
