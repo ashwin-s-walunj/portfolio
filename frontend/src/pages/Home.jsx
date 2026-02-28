@@ -68,7 +68,7 @@ const Home = () => {
                     <div className="mb-6">
             <span
                 className="inline-block px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-6">
-              Available for Opportunities
+              Open to Work
             </span>
                     </div>
 
@@ -172,9 +172,7 @@ const Home = () => {
                                     <a href={`tel:${portfolioData.personal.phone}`}
                                        className="hover:text-cyan-400 transition-colors">
                                         {portfolioData.personal.phone}
-                                    </a>
-                                </div>
-                                <div className="flex items-center gap-3 text-gray-300">
+                                    </a>/
                                     <Phone className="w-5 h-5 text-cyan-400 flex-shrink-0"/>
                                     <a href={`tel:${portfolioData.personal.phoneIndia}`}
                                        className="hover:text-cyan-400 transition-colors">
@@ -186,12 +184,16 @@ const Home = () => {
                     </div>
 
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
                         {portfolioData.stats.map((stat, idx) => (
                             <Card key={idx}
                                   className="bg-[#151518] border-cyan-500/20 hover:border-cyan-500/40 transition-all hover-lift">
                                 <CardContent className="p-6 text-center">
-                                    <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
+                                    <Button>
+                                        <div className="text-3xl font-bold gradient-text mb-2"
+                                             onClick={stat.id ? () => document.getElementById(stat.id).scrollIntoView({behavior: 'smooth'}) : () => {
+                                             }}>{stat.value}</div>
+                                    </Button>
                                     <div className="text-sm text-gray-400">{stat.label}</div>
                                 </CardContent>
                             </Card>
@@ -533,13 +535,22 @@ const Home = () => {
                                     <Mail className="w-4 h-4"/>
                                     {portfolioData.personal.email}
                                 </a>
-                                <a
-                                    href={`tel:${portfolioData.personal.phone}`}
-                                    className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
-                                >
-                                    <Phone className="w-4 h-4"/>
-                                    {portfolioData.personal.phone}
-                                </a>
+                                <div className="flex items-center gap-2 text-gray-300">
+                                    <a
+                                        href={`tel:${portfolioData.personal.phone}`}
+                                        className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
+                                    >
+                                        <Phone className="w-4 h-4"/>
+                                        {portfolioData.personal.phone}
+                                    </a>/
+                                    <a
+                                        href={`tel:${portfolioData.personal.phoneIndia}`}
+                                        className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
+                                    >
+                                        <Phone className="w-4 h-4"/>
+                                        {portfolioData.personal.phoneIndia}
+                                    </a>
+                                </div>
                                 <div className="flex items-center gap-2 text-gray-400">
                                     <MapPin className="w-4 h-4"/>
                                     {portfolioData.personal.location}

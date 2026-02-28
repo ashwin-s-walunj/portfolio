@@ -3,7 +3,7 @@ export const portfolioData = {
             name: "Ashwin Shahaji Walunj",
             title: "Software Engineer",
             headline: "Building scalable platforms with 2+ years of full-stack expertise",
-            bio: "Software Engineer and M.Sc. candidate with 2+ years of full-stack experience building high-availability, scalable platforms. Passionate about end-to-end ownership, from translating complex financial regulations into scalable microservices to shipping responsive UIs. Thrives in fast-paced environments, driving rapid deployment and high-quality, production-ready code.",
+            bio: "I am a Full-Stack Developer (Java/Node.js/React) with 2+ years of experience building scalable microservices and integrating intelligent AI/LLM solutions (LangChain, Hugging Face). Currently completing my Master's in Software Engineering in Germany, I bring a strong background in cloud engineering and DevOps. I am actively looking for opportunities where I can write clean code and push the boundaries of what's possible.",
             email: "ashwinwalunj@gmail.com",
             phone: "+49 155 1024 4310",
             phoneIndia: "+91 8412889476",
@@ -26,7 +26,7 @@ export const portfolioData = {
                 name: "Vinyl Equity Platform",
                 period: "Jul 2024 - Aug 2025",
                 description: "Financial equity platform handling sensitive user data",
-                highlights: ["Accelerated iteration cycles by architecting AWS infrastructure using Terraform and Docker CI/CD pipelines, reducing deployment time by 60%", "Assumed end-to-end ownership, translating complex financial regulations into scalable, production-grade TypeScript microservices"]
+                highlights: ["Accelerated iteration cycles by architecting AWS infrastructure using Terraform and Docker CI/CD pipelines, reducing deployment time by 60%", "Assumed end-to-end ownership, translating complex financial requirements into scalable, production-grade TypeScript microservices"]
             }, {
                 name: "Vendor Management System",
                 period: "Sep 2023 - Jul 2024",
@@ -65,7 +65,7 @@ export const portfolioData = {
         recommendations: [{
             id: 1,
             name: "Ankit Wadhwana",
-            linkedIn:"https://www.linkedin.com/in/awadhwana/",
+            linkedIn: "https://www.linkedin.com/in/awadhwana/",
             title: "Technical Lead @Vinyl Equity",
             relationship: "Direct Manager",
             date: "September 24, 2025",
@@ -74,7 +74,7 @@ export const portfolioData = {
             id: 2,
             name: "Karthik Bokkesam",
             title: "Technical Lead @Vinyl Equity",
-            linkedIn:"https://www.linkedin.com/in/karthik-bokkesam/",
+            linkedIn: "https://www.linkedin.com/in/karthik-bokkesam/",
             relationship: "Colleague",
             date: "September 18, 2025",
             text: "I had the pleasure of working with Ashwin for over a year, during which he consistently demonstrated professionalism, diligence, and punctuality. He brings a strong work ethic, pays exceptional attention to detail, and is a quick learner. Given that our product operates in the financial domain, he quickly picked up the necessary domain knowledge and contributed effectively across multiple verticals, showcasing great adaptability. Ashwin is also open to feedback and accepts criticism with maturity, using it as an opportunity to improve. What I enjoyed most about working with him was the positivity and can-do attitude he brought to the team every day. I am confident that Ashwin would be an excellent fit for any team seeking a talented, self-motivated, hardworking, and positive individual."
@@ -137,9 +137,10 @@ export const portfolioData = {
             }
         ],
 
-        stats: [{label: "Years Experience", value: "2+"}, {
-            label: "Projects Delivered",
-            value: "10+"
-        }, {label: "Technologies", value: "25+"}, {label: "Deployment Time Reduced", value: "60%"}]
+        stats: [{label: "Years Experience", value: "2+", id: 'experience'}, {
+            label: "Technologies",
+            value: "25+",
+            id: "skills"
+        }, {label: "Deployment Time Reduced", value: "60%"}]
     }
 ;
